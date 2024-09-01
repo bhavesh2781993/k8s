@@ -125,3 +125,7 @@
    - `kubectl logs <<resource>> <<resource_name>>`
 7. Describe Resources:
    - `kubectl describe <<resource>> <<resource_name>>`
+
+## References:
+
+- [Kubernetes Crash Course - Laith Academy](https://www.youtube.com/watch?v=llf65JSPmDY)
