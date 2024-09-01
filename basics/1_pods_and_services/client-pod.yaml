@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: client-pod # pod is created with this name
+  labels:
+    app: client # This is used as a reference used by other resources
+spec:
+  containers:
+    - name: client
+      image: laithharb/web-app:v1

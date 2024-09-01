@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server-depl
+spec: # Spec for deployment
+  replicas: 1 # No of instances we want to create for the matching pod
+  selector:
+    matchLabels: # Match the label of pod
+      app: server
+  template: # Inside template we always define pod
+    metadata:
+      name: server-pod
+      labels:
+        app: server
+    spec:
+      containers:
+      - name: server
+        image: laithharb/server:v1
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: server-srv
+spec:
+  type: ClusterIP
+  selector:
+    app: server
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
